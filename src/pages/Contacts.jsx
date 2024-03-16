@@ -1,8 +1,12 @@
 import { Typography } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
 
 export default function Contacts() {
   return (
     <>
+      <Helmet>
+        <title>Contacts</title>
+      </Helmet>
       <Typography variant="h1" component="h2">
         Contacts
       </Typography>

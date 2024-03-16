@@ -1,11 +1,16 @@
 import { Typography } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
+import Title from '../components/Title/Title';
+import Form from '../components/Form/Form';
 
 export default function Home() {
   return (
     <>
-      <Typography variant="h1" component="h2">
-        Home
-      </Typography>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
+      <Title>Калькулятор Квадрат Пифагора</Title>
+      <Form />
       <Typography variant="body1">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
         nisi similique ad quis sunt eaque aliquam soluta expedita fugit itaque,
