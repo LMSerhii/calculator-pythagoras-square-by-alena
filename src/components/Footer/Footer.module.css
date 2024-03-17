@@ -1,4 +1,14 @@
 .footer {
-  background-color: brown;
+  background-color: rgba(44, 44, 48, 0.662);
   padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
