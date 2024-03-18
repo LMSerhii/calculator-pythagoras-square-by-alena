@@ -1,56 +1,79 @@
 import { useState } from 'react';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { useDispatch, useSelector } from 'react-redux';
+import ReactInputMask from 'react-input-mask';
 import css from './Form.module.css';
-import { DesktopDatePicker, MobileDatePicker } from '@mui/x-date-pickers';
-import dayjs from 'dayjs';
-import { Button, useMediaQuery } from '@mui/material';
+import { addDate } from '../../redux/dateSlice';
+import { selectIsShow } from '../../redux/selectors';
+import { setIsShow } from '../../redux/calculatorSlice';
 
 export default function Form() {
-  const [value, setValue] = useState(dayjs('2022-04-17'));
-  const mquery = useMediaQuery('(min-width: 768px)');
+  const dispatch = useDispatch();
+  const [value, setValue] = useState('');
+  const isShow = useSelector(selectIsShow);
 
-  const handleClick = e => {
+  // const mquery = useMediaQuery('(min-width: 768px)');
+
+  const handleClickSet = e => {
     e.preventDefault();
-    console.log(value);
+
+    if (!value) {
+      return;
+    }
+
+    const [day, month, year] = value.split('.').map(Number);
+
+    dispatch(
+      addDate({
+        day: day,
+        month: month,
+        year: year,
+      })
+    );
+
+    dispatch(setIsShow(true));
+  };
+
+  const handleClickClear = e => {
+    e.preventDefault();
+    dispatch(
+      addDate({
+        day: null,
+        month: null,
+        year: null,
+      })
+    );
+    setValue('');
+    dispatch(setIsShow(false));
   };
 
   return (
     <div className={css.wrap}>
-      {/* <form className={css.form}>
+      <form className={css.form}>
         <div className={css.inputWrapper}>
-          <label className={css.label} htmlFor="inputId">
-            Введите вашу дату рождения
-          </label>
-          <input
-            className={css.input}
-            type="date"
-            id={inputId}
-            value={value}
+          <p className={css.label}>Введите вашу дату рождения</p>
+          <ReactInputMask
+            className={css.inputMask}
+            mask="99.99.9999"
+            maskPlaceholder="__.__.____"
+            placeholder="mm.dd.yyyy"
             onChange={e => setValue(e.target.value)}
+            value={value}
           />
         </div>
-        <button className={css.button} type="submit" onClick={handleClick}>
-          Расчитать
-        </button>
-      </form> */}
-
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        {mquery ? (
-          <DesktopDatePicker
-            value={value}
-            onChange={newValue => setValue(newValue)}
-          />
+        {!isShow ? (
+          <button className={css.button} type="submit" onClick={handleClickSet}>
+            Расчитать
+          </button>
         ) : (
-          <MobileDatePicker
-            value={value}
-            onChange={newValue => setValue(newValue)}
-          />
+          <button
+            className={css.button}
+            type="submit"
+            onClick={handleClickClear}
+          >
+            Очистить
+          </button>
         )}
-      </LocalizationProvider>
-      <Button className={css.button} variant="contained" onClick={handleClick}>
-        Расчитать
-      </Button>
+      </form>
     </div>
   );
 }

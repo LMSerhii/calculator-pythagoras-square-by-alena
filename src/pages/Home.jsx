@@ -5,8 +5,11 @@ import Hero from '../components/Hero/Hero';
 import Benefits from '../components/Benefits/Benefits';
 import Action from '../components/Action/Action';
 import Square from '../components/Square/Square';
+import { useSelector } from 'react-redux';
+import { selectIsShow } from '../redux/selectors';
 
 export default function Home() {
+  const isShow = useSelector(selectIsShow);
   return (
     <>
       <Helmet>
@@ -14,7 +17,7 @@ export default function Home() {
       </Helmet>
       <Title>Калькулятор Квадрат Пифагора</Title>
       <Form />
-      <Square />
+      {isShow && <Square />}
       <Hero />
       <Benefits />
       <Action />

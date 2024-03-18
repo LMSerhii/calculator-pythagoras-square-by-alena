@@ -1,40 +1,110 @@
+import { useSelector } from 'react-redux';
 import css from './Square.module.css';
+import { selectResult } from '../../redux/selectors';
 
 export default function Square() {
+  const {
+    character,
+    health,
+    luck,
+    energy,
+    logic,
+    duty,
+    interest,
+    labour,
+    memory,
+    selfEsteem,
+    work,
+    talent,
+    purpose,
+    family,
+    habits,
+    spirit,
+    temperament,
+  } = useSelector(selectResult);
+
   return (
     <div className={css.wrapper}>
       <div className={css.left}>
         <div className={css.leftTop}>
           <div className={css.leftTopFirst}>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
+            <div>
+              <span>{character}</span>
+              <span>character</span>
+            </div>
+            <div>
+              <span>{health}</span>
+              <span>health</span>
+            </div>
+            <div>
+              <span>{luck}</span>
+              <span>luck</span>
+            </div>
           </div>
           <div className={css.leftTopSecond}>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
+            <div>
+              <span>{energy}</span>
+              <span>energy</span>
+            </div>
+            <div>
+              <span>{logic}</span>
+              <span>logic</span>
+            </div>
+            <div>
+              <span>{duty}</span>
+              <span>duty</span>
+            </div>
           </div>
           <div className={css.leftTopThird}>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
+            <div>
+              <span>{interest}</span>
+              <span>interest</span>
+            </div>
+            <div>
+              <span>{labour}</span>
+              <span>labour</span>
+            </div>
+            <div>
+              <span>{memory}</span>
+              <span>memory</span>
+            </div>
           </div>
         </div>
         <div className={css.leftDown}>
-          <div>10</div>
-          <div>11</div>
-          <div>12 </div>
+          <div>
+            <span>{selfEsteem}</span>
+            <span>selfEsteem</span>
+          </div>
+          <div>
+            <span>{work}</span>
+            <span>work</span>
+          </div>
+          <div>
+            <span>{talent}</span>
+            <span>talent</span>
+          </div>
         </div>
       </div>
       <div className={css.right}>
         <div className={css.rightTop}>
-          <div>13</div>
-          <div>14</div>
-          <div>15</div>
+          <div>
+            <span>{purpose}</span>
+            <span>purpose</span>
+          </div>
+          <div>
+            <span>{family}</span>
+            <span>family</span>
+          </div>
+          <div>
+            <span>{habits}</span>
+            <span>habits</span>
+          </div>
         </div>
         <div className={css.rightDown}>
-          <div>16</div>
+          <div>
+            <span>{spirit && temperament && { spirit } / { temperament }}</span>
+            <span>spirit / temperament</span>
+          </div>
         </div>
       </div>
     </div>
