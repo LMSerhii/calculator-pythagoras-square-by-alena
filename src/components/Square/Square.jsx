@@ -102,7 +102,7 @@ export default function Square() {
         </div>
         <div className={css.rightDown}>
           <div>
-            <span>{spirit && temperament && { spirit } / { temperament }}</span>
+            <span>{spirit && temperament && `${spirit} / ${temperament}`}</span>
             <span>spirit / temperament</span>
           </div>
         </div>
