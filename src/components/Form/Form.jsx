@@ -4,7 +4,8 @@ import ReactInputMask from 'react-input-mask';
 import css from './Form.module.css';
 import { addDate } from '../../redux/dateSlice';
 import { selectIsShow } from '../../redux/selectors';
-import { setIsShow } from '../../redux/calculatorSlice';
+import { addLifeNumbers, setIsShow } from '../../redux/calculatorSlice';
+import { converteDate } from '../../helpers/calculator-pythagoras-square';
 
 export default function Form() {
   const dispatch = useDispatch();
@@ -20,7 +21,15 @@ export default function Form() {
       return;
     }
 
-    const [day, month, year] = value.split('.').map(Number);
+    const dateList = value.split('.').map(Number);
+
+    const validate = !dateList.some(el => isNaN(el));
+
+    if (!validate) {
+      return;
+    }
+
+    const [day, month, year] = dateList;
 
     dispatch(
       addDate({
@@ -28,6 +37,16 @@ export default function Form() {
         month: month,
         year: year,
       })
+    );
+
+    dispatch(
+      addLifeNumbers(
+        converteDate({
+          day: day,
+          month: month,
+          year: year,
+        })
+      )
     );
 
     dispatch(setIsShow(true));

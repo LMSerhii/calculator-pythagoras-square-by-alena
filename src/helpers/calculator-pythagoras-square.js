@@ -1,11 +1,11 @@
-export const calculatorPythagorasSquare = date => {
+export const calculatorPythagorasSquare = (date, lifeNumbers) => {
   if (JSON.stringify(date) === '{}') {
     return;
   }
 
   const RESULT = {};
 
-  const stringDate = `${date.day}${date.month}${date.year}`;
+  const stringDate = `${date.day}${date.month}${date.year}${lifeNumbers.first}${lifeNumbers.second}${lifeNumbers.third}${lifeNumbers.fourth}`;
 
   let character = '';
   let health = '';
@@ -58,89 +58,22 @@ export const calculatorPythagorasSquare = date => {
   RESULT['labour'] = labour || defaultValue;
   RESULT['memory'] = memory || defaultValue;
 
-  RESULT['selfEsteem'] = (character + energy + interest).length || defaultValue;
-  RESULT['work'] = (health + logic + labour).length || defaultValue;
-  RESULT['talent'] = (luck + duty + memory).length || defaultValue;
-  RESULT['purpose'] = (character + health + luck).length || defaultValue;
-  RESULT['family'] = (energy + logic + duty).length || defaultValue;
-  RESULT['habits'] = (interest + labour + memory).length || defaultValue;
-  RESULT['spirit'] = (character + logic + memory).length || defaultValue;
-  RESULT['temperament'] = (interest + logic + luck).length || defaultValue;
+  RESULT['selfEsteem'] =
+    (character + energy + interest).length.toString() || defaultValue;
+  RESULT['work'] = (health + logic + labour).length.toString() || defaultValue;
+  RESULT['talent'] = (luck + duty + memory).length.toString() || defaultValue;
+  RESULT['purpose'] =
+    (character + health + luck).length.toString() || defaultValue;
+  RESULT['family'] = (energy + logic + duty).length.toString() || defaultValue;
+  RESULT['habits'] =
+    (interest + labour + memory).length.toString() || defaultValue;
+  RESULT['spirit'] =
+    (character + logic + memory).length.toString() || defaultValue;
+  RESULT['temperament'] =
+    (interest + logic + luck).length.toString() || defaultValue;
 
   return RESULT;
 };
-
-// export const calculatorPythagorasSquare = date => {
-//   if (Object.keys(date).length === 0) {
-//     return;
-//   }
-
-//   const defaultValue = '-';
-//   const RESULT = {
-//     character: defaultValue,
-//     health: defaultValue,
-//     luck: defaultValue,
-//     energy: defaultValue,
-//     logic: defaultValue,
-//     duty: defaultValue,
-//     interest: defaultValue,
-//     labour: defaultValue,
-//     memory: defaultValue,
-//     selfEsteem: defaultValue,
-//     work: defaultValue,
-//     talent: defaultValue,
-//     purpose: defaultValue,
-//     family: defaultValue,
-//     habits: defaultValue,
-//     spirit: defaultValue,
-//     temperament: defaultValue,
-//   };
-
-//   const stringDate = `${date.day}${date.month}${date.year}`;
-
-//   const categories = {
-//     1: 'character',
-//     2: 'energy',
-//     3: 'interest',
-//     4: 'health',
-//     5: 'logic',
-//     6: 'labour',
-//     7: 'luck',
-//     8: 'duty',
-//     9: 'memory',
-//   };
-
-//   for (let i = 0; i < stringDate.length; i++) {
-//     const category = categories[stringDate[i]];
-//     if (category) {
-//       RESULT[category] += stringDate[i];
-//     }
-//   }
-
-//   const calculateLength = str =>
-//     str.length > 0 ? str.length : defaultValue.length;
-
-//   RESULT.selfEsteem = calculateLength(
-//     RESULT.character + RESULT.energy + RESULT.interest
-//   );
-//   RESULT.work = calculateLength(RESULT.health + RESULT.logic + RESULT.labour);
-//   RESULT.talent = calculateLength(RESULT.luck + RESULT.duty + RESULT.memory);
-//   RESULT.purpose = calculateLength(
-//     RESULT.character + RESULT.health + RESULT.luck
-//   );
-//   RESULT.family = calculateLength(RESULT.energy + RESULT.logic + RESULT.duty);
-//   RESULT.habits = calculateLength(
-//     RESULT.interest + RESULT.labour + RESULT.memory
-//   );
-//   RESULT.spirit = calculateLength(
-//     RESULT.character + RESULT.logic + RESULT.memory
-//   );
-//   RESULT.temperament = calculateLength(
-//     RESULT.interest + RESULT.logic + RESULT.luck
-//   );
-
-//   return RESULT;
-// };
 
 const sumPlus = arg => {
   return String(arg)

@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 export default function AppBar() {
   const [isMobileView, setIsMobileView] = useState(false);
 
-  const mquery = useMediaQuery('(min-width: 768px)');
+  const mquery = useMediaQuery('(min-width: 1440px)');
 
   useEffect(() => {
     setIsMobileView(mquery);

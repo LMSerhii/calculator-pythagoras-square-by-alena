@@ -8,6 +8,7 @@ import Square from '../components/Square/Square';
 import { useSelector } from 'react-redux';
 import { selectIsShow } from '../redux/selectors';
 import LifeNumbers from '../components/LifeNumbers/LifeNumbers';
+import StringResults from '../components/StringResults/StringResults';
 
 export default function Home() {
   const isShow = useSelector(selectIsShow);
@@ -20,6 +21,7 @@ export default function Home() {
       <Form />
       {isShow && <LifeNumbers />}
       {isShow && <Square />}
+      {isShow && <StringResults />}
       <Hero />
       <Benefits />
       <Action />
