@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import CopyToClipboardOnClick from '../CopyToClipboardOnClick/CopyToClipboardOnClick';
 import { selectLifeNumbers, selectResult } from '../../redux/selectors';
+import s from './StringResults.module.css';
 
 export default function StringResults() {
   const {
@@ -27,5 +28,9 @@ export default function StringResults() {
 
   const text = `${character}/${energy}/${interest}/${health}/${logic}/${labour}/${luck}/${duty}/${memory}/ЧЖП${fifth}/цель${purpose}/семья${family}/привыч${habits}/самооц${selfEsteem}/работа${work}/талант${talent}/дух${spirit}/темп${temperament}`;
 
-  return <CopyToClipboardOnClick text={text} />;
+  return (
+    <div className={s.wrapper}>
+      <CopyToClipboardOnClick text={text} />
+    </div>
+  );
 }

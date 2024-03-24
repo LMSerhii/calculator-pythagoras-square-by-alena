@@ -8,13 +8,13 @@ const buildLinkClass = ({ isActive }) => {
 
 export default function Navigation() {
   return (
-    <div className={css.navigation}>
+    <nav className={css.navigation}>
       <NavLink to="/" className={buildLinkClass}>
         Home
       </NavLink>
       <NavLink to="/contacts" className={buildLinkClass}>
         Contacts
       </NavLink>
-    </div>
+    </nav>
   );
 }

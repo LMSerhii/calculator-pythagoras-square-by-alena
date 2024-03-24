@@ -1,9 +1,13 @@
-import { Typography, useMediaQuery } from '@mui/material';
-import css from './AppBar.module.css';
-import { BsStars } from 'react-icons/bs';
 import NavigationMobile from '../NavigationMobile/NavigationMobile';
 import Navigation from '../Navigation/Navigation';
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'usehooks-ts';
+import Header from '../Header/Header';
+import SocialIcons from '../SocialIcons/SocialIcons';
+import Telegram from '../Telegram/Telegram';
+import Container from '../Container/Container';
+import s from './AppBar.module.css';
+import Logo from '../Logo/logo';
 
 export default function AppBar() {
   const [isMobileView, setIsMobileView] = useState(false);
@@ -15,14 +19,22 @@ export default function AppBar() {
   }, [mquery]);
 
   return (
-    <header className={css.header}>
-      <nav className={css.nav}>
-        <div className={css.logoWrapper}>
-          <BsStars color="yellow" />
-          <Typography variant="body1">Logo</Typography>
-        </div>
-        {isMobileView ? <Navigation /> : <NavigationMobile />}
-      </nav>
-    </header>
+    <Header>
+      <Container className={s.header}>
+        {isMobileView ? (
+          <>
+            <Logo />
+            <Navigation />
+            <SocialIcons />
+          </>
+        ) : (
+          <>
+            <NavigationMobile />
+            <Logo />
+            <Telegram />
+          </>
+        )}
+      </Container>
+    </Header>
   );
 }
