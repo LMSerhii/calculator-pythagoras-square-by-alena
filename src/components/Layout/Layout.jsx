@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import css from './Layout.module.css';
 import AppBar from '../AppBar/AppBar';
 import Footer from '../Footer/Footer';
 
@@ -10,7 +9,7 @@ export default function Layout() {
     <>
       <AppBar />
       <Suspense fallback={null}>
-        <main className={css.container}>
+        <main>
           <Outlet />
         </main>
       </Suspense>

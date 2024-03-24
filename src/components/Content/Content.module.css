@@ -1,0 +1,8 @@
+.content {
+}
+
+@media screen and (min-width: 1440px) {
+  .content {
+    width: 558px;
+  }
+}

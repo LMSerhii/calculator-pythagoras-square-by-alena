@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { selectIsShow } from '../redux/selectors';
 import LifeNumbers from '../components/LifeNumbers/LifeNumbers';
 import StringResults from '../components/StringResults/StringResults';
+import BlogConsultation from '../components/BlogConsultation/BlogConsultation';
 
 export default function Home() {
   const isShow = useSelector(selectIsShow);
@@ -17,6 +18,7 @@ export default function Home() {
       <Helmet>
         <title>Home</title>
       </Helmet>
+      <BlogConsultation />
       <Title>Калькулятор Квадрат Пифагора</Title>
       <Form />
       {isShow && <LifeNumbers />}

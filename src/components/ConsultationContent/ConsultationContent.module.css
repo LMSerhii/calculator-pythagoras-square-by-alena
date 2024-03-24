@@ -1,0 +1,37 @@
+.consultationContent {
+  background-image: url('../../icons/countur.svg'), url('../../icons/fill.svg');
+  background-repeat: no-repeat;
+
+  background-position-x: 5px, 13px;
+  background-position-y: 13px, 22px;
+
+  background-size: 256px 270px, 240px 261px;
+}
+
+@media screen and (min-width: 375px) {
+  .consultationContent {
+    background-size: 316px 330px, 300px 321px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .consultationContent {
+    background-position-x: 25px, 40px;
+    background-position-y: 25px, 42px;
+
+    background-size: 614px 663px, 587px 646px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .consultationContent {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    background-position-x: 112px, 120px;
+    background-position-y: 0px, 14px;
+
+    background-size: 384px 425px, 367px 410px;
+  }
+}
