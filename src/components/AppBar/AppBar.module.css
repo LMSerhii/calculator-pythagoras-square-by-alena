@@ -1,5 +1,10 @@
-.header {
+.headerContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.scroll {
+  border-bottom: 1px solid #1e5b2a;
+  background-color: #fff;
 }

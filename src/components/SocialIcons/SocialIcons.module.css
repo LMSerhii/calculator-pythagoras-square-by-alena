@@ -2,4 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 15px;
+}
+
+.icon {
+  fill: #0f0f12;
+}
+
+.icon:hover,
+.icon:focus {
+  fill: #1e5b2a;
 }

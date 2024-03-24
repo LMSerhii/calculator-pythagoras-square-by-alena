@@ -8,7 +8,7 @@ export default function SocialIcons() {
     <ul className={s.socialIcons}>
       <li>
         <a href="http://telegram.com" target="_blank" rel="noopener noreferrer">
-          <FaTelegram />
+          <FaTelegram className={s.icon} size={24} />
         </a>
       </li>
       <li>
@@ -17,12 +17,12 @@ export default function SocialIcons() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaInstagram />
+          <FaInstagram className={s.icon} size={24} />
         </a>
       </li>
       <li>
         <a href="http://facebook.com" target="_blank" rel="noopener noreferrer">
-          <FaFacebook />
+          <FaFacebook className={s.icon} size={24} />
         </a>
       </li>
     </ul>
