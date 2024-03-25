@@ -2,6 +2,13 @@
   margin: 0 auto;
   margin-bottom: 16px;
   position: relative;
+  background-image: url('../../icons/countur.svg'), url('../../icons/fill.svg');
+  background-repeat: no-repeat;
+
+  background-position-x: 5px, 13px;
+  background-position-y: 13px, 22px;
+
+  background-size: 256px 270px, 240px 261px;
 }
 
 @media screen and (min-width: 375px) {
@@ -19,6 +26,13 @@
 
 @media screen and (min-width: 1440px) {
   .thumb {
-    /* min-width: 556px; */
+    min-width: 556px;
+    background-position-x: 57px, 67px;
+    background-position-y: 12px, 30px;
+    background-size: 384px 425px, 367px 410px;
   }
+}
+
+.img {
+  margin: 0 auto;
 }

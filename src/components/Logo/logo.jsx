@@ -4,9 +4,9 @@ import { BsStars } from 'react-icons/bs';
 export default function Logo() {
   return (
     <div className={s.logo}>
-      <span>Алена</span>
+      <span className={s.text}>Алена</span>
       <BsStars color="#EB6D0A" />
-      <span>Твой нумеролог</span>
+      <span className={s.text}>Твой нумеролог</span>
     </div>
   );
 }

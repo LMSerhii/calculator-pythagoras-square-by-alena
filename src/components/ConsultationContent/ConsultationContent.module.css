@@ -1,4 +1,4 @@
-.consultationContent {
+/* .consultationContent {
   background-image: url('../../icons/countur.svg'), url('../../icons/fill.svg');
   background-repeat: no-repeat;
 
@@ -29,9 +29,17 @@
     align-items: center;
     gap: 24px;
 
-    background-position-x: 112px, 120px;
+    background-position-x: 0px, 10px;
     background-position-y: 0px, 14px;
 
     background-size: 384px 425px, 367px 410px;
+  }
+} */
+
+@media screen and (min-width: 1440px) {
+  .consultationContent {
+    display: flex;
+    align-items: center;
+    gap: 24px;
   }
 }

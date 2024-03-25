@@ -8,7 +8,7 @@ export default function NavigationMobile() {
 
   return (
     <nav className={s.navigation}>
-      <RxHamburgerMenu onClick={handleClick} />
+      <RxHamburgerMenu size={40} onClick={handleClick} />
     </nav>
   );
 }

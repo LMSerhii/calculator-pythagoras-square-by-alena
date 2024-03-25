@@ -1,13 +1,31 @@
 .logo {
   padding: 20px 0;
   color: #1e5b2a;
-  font-family: Yellowtail, cursive;
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 16px;
+  font-family: Yellowtail;
   line-height: normal;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.02em;
 
   display: flex;
-  gap: 15px;
+  gap: 5px;
   align-items: center;
+}
+
+@media screen and (min-width: 375px) {
+  .logo {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    font-size: 28px;
+    gap: 15px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .logo {
+    font-size: 44px;
+  }
 }
