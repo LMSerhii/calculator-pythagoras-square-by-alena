@@ -2,38 +2,42 @@ import s from './SocialIcons.module.css';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { RiInstagramFill } from 'react-icons/ri';
 import { FaFacebookF } from 'react-icons/fa';
+import clsx from 'clsx';
 
-export default function SocialIcons() {
+export default function SocialIcons({ linkStyle, iconStyle }) {
+  const buldLinkStyle = clsx(s.link, linkStyle && linkStyle);
+  const buldIconStyle = clsx(s.icon, iconStyle && iconStyle);
+
   return (
     <ul className={s.socialIcons}>
       <li>
         <a
-          className={s.link}
+          className={buldLinkStyle}
           href="http://telegram.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaTelegramPlane className={s.icon} size={22} />
+          <FaTelegramPlane className={buldIconStyle} size={22} />
         </a>
       </li>
       <li>
         <a
-          className={s.link}
+          className={buldLinkStyle}
           href="http://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <RiInstagramFill className={s.icon} size={22} />
+          <RiInstagramFill className={buldIconStyle} size={22} />
         </a>
       </li>
       <li>
         <a
-          className={s.link}
+          className={buldLinkStyle}
           href="http://facebook.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaFacebookF className={s.icon} size={20} />
+          <FaFacebookF className={buldIconStyle} size={20} />
         </a>
       </li>
     </ul>
