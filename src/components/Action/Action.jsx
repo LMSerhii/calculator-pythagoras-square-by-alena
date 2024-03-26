@@ -14,7 +14,7 @@ export default function Action() {
             the special box and get your Square Pythagoras Square and
             numerological calculation of the Square by your date.
           </p>
-          <Link className={css.link} to="#">
+          <Link className={css.link} to="#squareSection" target="_self">
             Calculate your Psychomatrix
           </Link>
         </div>

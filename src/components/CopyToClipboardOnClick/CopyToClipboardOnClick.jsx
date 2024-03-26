@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import s from './CopyToClipboardOnClick.module.css';
 
 const CopyToClipboardOnClick = ({ text }) => {
   const [copied, setCopied] = useState(false);
@@ -10,8 +11,8 @@ const CopyToClipboardOnClick = ({ text }) => {
   };
 
   return (
-    <div style={{ cursor: 'pointer' }} onClick={handleCopy}>
-      <p>{text}</p>
+    <div className={s.wrapper} onClick={handleCopy}>
+      <p className={s.text}>{text}</p>
       {copied ? 'Copied!' : 'Click to Copy'}
     </div>
   );

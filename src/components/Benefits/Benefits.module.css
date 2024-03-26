@@ -1,9 +1,8 @@
 .benefits {
   /* background-color: skyblue; */
-  background-color: #305a30;
-  color: #fff;
 
   padding: 30px;
+  border: 1px solid #305a30;
   border-radius: 12px;
 }
 

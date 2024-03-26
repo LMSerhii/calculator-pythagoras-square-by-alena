@@ -69,19 +69,21 @@ export default function Form() {
     <div className={css.wrap}>
       <form className={css.form}>
         <div className={css.inputWrapper}>
-          <p className={css.label}>Введите вашу дату рождения</p>
+          {/* <p className={css.label}>Введите вашу дату рождения</p> */}
+          {/* <p className={css.label}>Please enter your date of birth</p> */}
           <ReactInputMask
             className={css.inputMask}
             mask="99.99.9999"
             maskPlaceholder="__.__.____"
-            placeholder="mm.dd.yyyy"
+            // placeholder="mm.dd.yyyy"
+            placeholder="Please enter your date of birth"
             onChange={e => setValue(e.target.value)}
             value={value}
           />
         </div>
         {!isShow ? (
           <button className={css.button} type="submit" onClick={handleClickSet}>
-            Расчитать
+            Calculate
           </button>
         ) : (
           <button
@@ -89,7 +91,7 @@ export default function Form() {
             type="submit"
             onClick={handleClickClear}
           >
-            Очистить
+            Clear
           </button>
         )}
       </form>
