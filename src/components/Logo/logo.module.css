@@ -1,26 +1,27 @@
 .logo {
   padding: 20px 0;
   color: #1e5b2a;
-  font-size: 16px;
+  font-size: 20px;
   font-family: Yellowtail;
   line-height: normal;
   letter-spacing: 0.02em;
 
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 5px;
   align-items: center;
 }
 
 @media screen and (min-width: 375px) {
   .logo {
-    font-size: 20px;
+    font-size: 24px;
+    flex-direction: row;
   }
 }
 
 @media screen and (min-width: 768px) {
   .logo {
-    font-size: 28px;
+    font-size: 32px;
     flex-direction: row;
     gap: 15px;
   }

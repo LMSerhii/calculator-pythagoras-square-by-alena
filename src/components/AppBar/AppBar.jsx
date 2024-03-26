@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import Header from '../Header/Header';
 import SocialIcons from '../SocialIcons/SocialIcons';
-import Telegram from '../Telegram/Telegram';
 import Container from '../Container/Container';
 import s from './AppBar.module.css';
 import Logo from '../Logo/logo';
@@ -49,9 +48,9 @@ export default function AppBar() {
           </>
         ) : (
           <>
-            <NavigationMobile />
             <Logo />
-            <Telegram />
+            <NavigationMobile />
+            {/* <Telegram /> */}
           </>
         )}
       </Container>

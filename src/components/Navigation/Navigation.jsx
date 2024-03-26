@@ -10,10 +10,10 @@ export default function Navigation() {
   return (
     <nav className={css.navigation}>
       <NavLink to="/" className={buildLinkClass}>
-        Главная
+        Main
       </NavLink>
       <NavLink to="/contacts" className={buildLinkClass}>
-        Обо мне
+        About me
       </NavLink>
     </nav>
   );

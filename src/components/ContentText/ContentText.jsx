@@ -5,12 +5,12 @@ const ContentText = () => {
     <div className={s.textWrapper}>
       <p className={s.text}>
         {
-          'Запрошую вас на 30-хвилинну безкоштовну консультацію. Під час зустрічі ви зможете розповісти, що спонукало вас звернутися, а я поділюся з вами своїм баченням нашої майбутньої роботи. Ви зможете побачити мій підхід та вирішити чи комфортно нам буде спілкуватися'
+          'I help you find balance and inner strength, guiding you on the path of personal growth through support and cooperation'
         }
       </p>
       <p className={s.text}>
         {
-          'Записуйтеся на консультацію, щоб разом визначити найкращий шлях до вашого саморозвитку та благополуччя'
+          'Sign up for a consultation to determine the best path to your self-development and well-being together'
         }
       </p>
     </div>

@@ -5,15 +5,19 @@
   background-image: url('../../icons/countur.svg'), url('../../icons/fill.svg');
   background-repeat: no-repeat;
 
-  background-position-x: -20px, -12px;
-  background-position-y: 40px, 68px;
+  background-position-x: -1px, 5px;
+  background-position-y: 0px, 20px;
 
-  background-size: 370px 400px, 373px 313px;
+  background-size: 290px 370px, 275px 340px;
 }
 
 @media screen and (min-width: 375px) {
   .thumb {
     width: 343px;
+    background-position-x: -1px, 5px;
+    background-position-y: 0px, 20px;
+
+    background-size: 340px 430px, 325px 400px;
   }
 }
 
@@ -21,6 +25,10 @@
   .thumb {
     width: 556px;
     margin-bottom: 24px;
+    background-position-x: 65px, 72px;
+    background-position-y: 0px, 20px;
+
+    background-size: 380px 490px, 365px 460px;
   }
 }
 
