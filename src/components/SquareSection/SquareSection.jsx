@@ -5,8 +5,8 @@ import Form from '../Form/Form';
 import Section from '../Section/Section';
 import Title from '../Title/Title';
 import LifeNumbers from '../LifeNumbers/LifeNumbers';
-import Square from '../Square/Square';
 import StringResults from '../StringResults/StringResults';
+import SquareMobile from '../SquareMobile/SquareMobile';
 
 export default function SquareSection() {
   const isShow = useSelector(selectIsShow);
@@ -18,7 +18,7 @@ export default function SquareSection() {
         <Title>Calculator Pythagoras Square</Title>
         <Form />
         {isShow && <LifeNumbers />}
-        {isShow && <Square />}
+        {isShow && <SquareMobile />}
         {isShow && <StringResults />}
       </Container>
     </Section>

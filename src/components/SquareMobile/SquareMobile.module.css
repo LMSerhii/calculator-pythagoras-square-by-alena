@@ -1,0 +1,118 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 5px;
+  }
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  & .first div,
+  .second div {
+    border: 1px solid #81a05e;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    width: 140px;
+    height: 100px;
+  }
+
+  @media screen and (min-width: 375px) {
+    & .first div,
+    .second div {
+      width: 160px;
+      height: 100px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & .first div,
+    .second div {
+      width: 290px;
+      height: 150px;
+    }
+  }
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.third div,
+.forth div {
+  border: 1px solid #81a05e;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  width: 140px;
+  height: 100px;
+}
+
+@media screen and (min-width: 375px) {
+  .third div,
+  .forth div {
+    width: 160px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .third div,
+  .forth div {
+    width: 290px;
+    height: 150px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .rightSide {
+    gap: 20px;
+  }
+}
+
+#purpose,
+#family,
+#habits {
+  background-color: #db742e;
+  color: wheat;
+}
+
+#spiritTemperament,
+#talent,
+#work,
+#selfEsteem {
+  margin-top: 20px;
+  background-color: #db742e;
+  color: wheat;
+}
+
+#spirit {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  border-bottom: 2px solid #fff;
+}
+
+#temperament {
+  border: none;
+  margin: 0;
+}
