@@ -27,7 +27,7 @@ const CopyToClipboardOnClick = ({ text }) => {
         {mq768 && text_768}
         {mq1440 && text_1440}
       </button>
-      {copied ? 'Copied!' : 'Click to Copy'}
+      <span>{copied ? 'Copied!' : 'Click to Copy'}</span>
     </div>
   );
 };

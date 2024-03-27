@@ -4,6 +4,11 @@
   align-items: center;
   gap: 10px;
 }
+.wrapper {
+  & span {
+    color: #0000007b;
+  }
+}
 
 .text {
   cursor: 'pointer';
