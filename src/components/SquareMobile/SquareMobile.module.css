@@ -25,9 +25,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     margin-bottom: 5px;
     width: 140px;
     height: 100px;
+
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    transition: border 350ms ease-in-out, background-color 350ms ease-in-out,
+      color 350ms ease-in-out;
+  }
+
+  & .first div:hover,
+  .first div:focus,
+  .second div:hover,
+  .second div:focus {
+    border: none;
+    background-color: #81a05e;
+    color: #fff;
   }
 
   @media screen and (min-width: 375px) {
@@ -54,17 +69,33 @@
   gap: 5px;
 }
 
+.third div {
+  border: 1px solid #81a05e;
+}
+
 .third div,
 .forth div {
-  border: 1px solid #81a05e;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 5px;
   margin-bottom: 5px;
   width: 140px;
   height: 100px;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  transition: border 350ms ease-in-out, background-color 350ms ease-in-out,
+    color 350ms ease-in-out;
+}
+
+.third div:hover,
+.third div:focus {
+  border: none;
+  background-color: #81a05e;
+  color: #fff;
 }
 
 @media screen and (min-width: 375px) {
@@ -94,25 +125,74 @@
 #habits {
   background-color: #db742e;
   color: wheat;
+
+  transition: background-color 350ms ease-in-out, color 350ms ease-in-out,
+    border-color 350ms ease-in-out;
 }
 
-#spiritTemperament,
 #talent,
 #work,
 #selfEsteem {
   margin-top: 20px;
+  border: none;
   background-color: #db742e;
   color: wheat;
+
+  transition: background-color 350ms ease-in-out, color 350ms ease-in-out,
+    border-color 350ms ease-in-out;
+}
+
+#spiritTemperament {
+  margin-top: 20px;
+}
+
+#purpose:hover,
+#purpose:focus,
+#family:hover,
+#family:focus,
+#habits:hover,
+#habits:focus,
+/* #spiritTemperament:hover,
+#spiritTemperament:focus, */
+#talent:hover,
+#talent:focus,
+#work:hover,
+#work:focus,
+#selfEsteem:hover,
+#selfEsteem:focus {
+  background-color: transparent;
+  border: 1px solid #db742e;
+  color: #000;
 }
 
 #spirit {
   border: none;
-  border-radius: 0;
+  background-color: #db742e;
+  color: wheat;
+
   margin: 0;
   border-bottom: 2px solid #fff;
+
+  transition: background-color 350ms ease-in-out;
+}
+
+#spirit:hover,
+#spirit:focus {
+  background-color: transparent;
+  border: 1px solid #db742e;
+  color: #000;
 }
 
 #temperament {
+  background-color: #db742e;
+  color: wheat;
   border: none;
   margin: 0;
+}
+
+#temperament:hover,
+#temperament:focus {
+  background-color: transparent;
+  border: 1px solid #db742e;
+  color: #000;
 }

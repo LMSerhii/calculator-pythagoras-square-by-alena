@@ -1,7 +1,7 @@
 import Container from '../Container/Container';
 import Section from '../Section/Section';
 import css from './Hero.module.css';
-import image from './calculator.png';
+import image from './square.png';
 
 export default function Hero() {
   return (

@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1e5b29;
+  background-color: #305a2f;
   color: #fff;
   margin: 0 auto;
   margin-top: 20px;
@@ -30,6 +30,13 @@
   height: 48px;
   border: none;
   border-radius: 100px;
+
+  transition: background-color 350ms ease-in;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #193d16;
 }
 
 @media screen and (min-width: 768px) {
