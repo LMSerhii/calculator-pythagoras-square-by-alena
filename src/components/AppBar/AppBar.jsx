@@ -22,6 +22,7 @@ export default function AppBar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
+
       if (scrollTop > 0) {
         setIsScrolled(true);
       } else {
