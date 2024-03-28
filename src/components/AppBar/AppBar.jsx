@@ -1,4 +1,3 @@
-import NavigationMobile from '../NavigationMobile/NavigationMobile';
 import Navigation from '../Navigation/Navigation';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
@@ -8,9 +7,12 @@ import Container from '../Container/Container';
 import s from './AppBar.module.css';
 import Logo from '../Logo/logo';
 import clsx from 'clsx';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import MobileMenu from '../MobileMenu/MobileMenu';
 
 export default function AppBar() {
   const [isMobileView, setIsMobileView] = useState(false);
+  const [isShow, setIsShow] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const mquery = useMediaQuery('(min-width: 1440px)');
@@ -36,6 +38,10 @@ export default function AppBar() {
     };
   }, []);
 
+  const toggleMobileMenu = () => {
+    setIsShow(!isShow);
+  };
+
   const className = clsx(s.headerContainer, isScrolled && s.scroll);
 
   return (
@@ -50,11 +56,13 @@ export default function AppBar() {
         ) : (
           <>
             <Logo />
-            <NavigationMobile />
+            <BurgerMenu isShow={isShow} setIsShow={toggleMobileMenu} />
+            {/* <NavigationMobile /> */}
             {/* <Telegram /> */}
           </>
         )}
       </Container>
+      <MobileMenu isShow={isShow} setIsShow={toggleMobileMenu} />
     </Header>
   );
 }
