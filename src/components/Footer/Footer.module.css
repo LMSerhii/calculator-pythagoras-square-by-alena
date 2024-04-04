@@ -1,5 +1,5 @@
 .footer {
-  background-color: #305a2f;
+  background-color: #734f96;
 }
 
 .footerWrapper {
@@ -43,16 +43,13 @@
 
 .link:hover,
 .link:focus {
-  border-color: #eb6d0b;
+  border-color: #fff;
   transform: scale(1.2);
+  .icon {
+    fill: #fff;
+  }
 }
 
 .icon {
-  fill: #fff;
-  transition: fill 250ms ease-in;
-}
-
-.icon:hover,
-.icon:focus {
   fill: #fff;
 }

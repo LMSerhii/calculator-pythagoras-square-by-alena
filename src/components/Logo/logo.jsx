@@ -8,7 +8,7 @@ export default function Logo({ className }) {
   return (
     <div className={logoBuildClass}>
       <span className={s.text}>Alyona</span>
-      <BsStars color="#EB6D0A" />
+      <BsStars color="#FF69B4" />
       <span className={s.text}>Your numerologist</span>
     </div>
   );

@@ -5,7 +5,21 @@
 }
 
 .scroll {
-  border-bottom: 1px solid #1e5b2a;
+  border-bottom: 1px solid #734f96;
   background-color: #fff;
   /* width: 100%; */
+}
+
+.link {
+}
+
+.link:hover,
+.link:focus {
+  background-color: #734f96;
+  border-color: #734f96;
+  transform: scale(1.2);
+
+  .icon {
+    fill: #fff;
+  }
 }

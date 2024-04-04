@@ -1,25 +1,25 @@
 import Container from '../Container/Container';
 import Section from '../Section/Section';
+import Title from '../Title/Title';
 import css from './Benefits.module.css';
 
 export default function Benefits() {
   return (
-    <Section>
+    <Section className={css.section}>
       <Container>
         <div className={css.benefits}>
-          {/* <p className={css.title}>Системой пользуются, чтобы:</p> */}
-          {/* <p className={css.text}>
-        выяснить, какими качествами обладает человек, как сочетаются разные
-        черты характера и проявления личности, отвечающие за лидерские качества,
-        уровень энергии, работоспособность, ответственность, склонность к разным
-        занятиям.
-      </p> */}
-          <p className={css.title}>The system is used to:</p>
+          <Title>Системой пользуются, чтобы:</Title>
           <p className={css.text}>
-            to find out what qualities a person possesses, how the different
-            character traits and manifestations of personality, which are
-            responsible for leadership qualities, energy level, efficiency,
-            responsibility, aptitude for different activities.
+            Выяснить, какими качествами обладает человек, как сочетаются разные
+            черты характера и проявления личности, отвечающие за лидерские
+            качества, уровень энергии, работоспособность, ответственность,
+            склонность к разным занятиям.
+          </p>
+          <p className={css.text}>
+            Прикоснитесь к тайнам чисел Пифагора: используйте наш калькулятор,
+            чтобы рассчитать квадрат даты рождения онлайн. Просто введите цифры
+            в специальное поле и получите свой квадрат Пифагора и
+            нумерологический расчет квадрата по вашей дате.
           </p>
         </div>
       </Container>

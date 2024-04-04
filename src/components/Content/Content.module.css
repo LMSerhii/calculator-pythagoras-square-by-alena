@@ -1,8 +1,8 @@
-.content {
+.link {
+  background-color: #734f96;
 }
 
-@media screen and (min-width: 1440px) {
-  .content {
-    width: 558px;
-  }
+.link:hover,
+.link:focus {
+  background-color: #b7b7e9;
 }

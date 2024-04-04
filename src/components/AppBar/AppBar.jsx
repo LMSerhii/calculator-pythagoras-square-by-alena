@@ -51,7 +51,7 @@ export default function AppBar() {
           <>
             <Navigation />
             <Logo />
-            <SocialIcons />
+            <SocialIcons linkStyle={s.link} iconStyle={s.icon} />
           </>
         ) : (
           <>

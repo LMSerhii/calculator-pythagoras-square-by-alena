@@ -1,15 +1,29 @@
-.benefits {
-  /* background-color: skyblue; */
-
-  padding: 30px;
-  border: 1px solid #305a30;
-  border-radius: 12px;
-}
-
 .title {
   font-size: large;
 }
 
 .text {
   line-height: 31px;
+}
+
+.link {
+  font-size: 14px;
+  background-color: #734f96;
+}
+
+.link:hover,
+.link:focus {
+  background-color: #b7b7e9;
+}
+
+@media screen and (min-width: 375px) {
+  .link {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .link {
+    margin: 0 auto;
+  }
 }

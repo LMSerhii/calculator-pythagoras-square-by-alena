@@ -1,4 +1,4 @@
-.thumb {
+/* .thumb {
   margin: 0 auto;
   margin-bottom: 16px;
   position: relative;
@@ -39,8 +39,10 @@
     background-position-y: 12px, 30px;
     background-size: 384px 425px, 367px 410px;
   }
-}
+} */
 
-.img {
-  margin: 0 auto;
+.thumb {
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
 }

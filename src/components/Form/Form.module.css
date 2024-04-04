@@ -1,31 +1,24 @@
 .wrap {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  margin-top: 40px;
 }
 
 .form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .inputWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.label {
 }
 
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #305a2f;
+  background-color: #734f96;
   color: #fff;
-  margin: 0 auto;
-  margin-top: 20px;
-  padding: 10px;
+
+  padding: 22px 10px;
   width: 100%;
   height: 48px;
   border: none;
@@ -36,7 +29,7 @@
 
 .button:hover,
 .button:focus {
-  background-color: #193d16;
+  background-color: #b7b7e9;
 }
 
 @media screen and (min-width: 768px) {
@@ -46,16 +39,17 @@
 }
 
 .inputMask {
-  padding: 20px 10px;
+  padding: 10px;
+  height: 48px;
+  border-radius: 100px;
   text-align: center;
-  border-radius: 12px;
-  border: 1px solid orange;
+  border: 1px solid #734f96;
   outline: none;
 }
 
 @media screen and (min-width: 1440px) {
   .inputMask {
     margin: 0 auto;
-    width: 768px;
+    width: 600px;
   }
 }

@@ -6,9 +6,11 @@ import Link from '../Link/Link';
 const Content = () => {
   return (
     <div className={s.content}>
-      <ContentTitle>Sign up for a consultation with Alyona</ContentTitle>
+      <ContentTitle>Запишитесь на консультацию</ContentTitle>
       <ContentText />
-      <Link to="https://telegram.org/">Sign up</Link>
+      <Link className={s.link} to="https://t.me/olena_numero_aroma">
+        Записаться
+      </Link>
     </div>
   );
 };
