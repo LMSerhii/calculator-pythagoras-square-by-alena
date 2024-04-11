@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import ReactInputMask from 'react-input-mask';
 import css from './Form.module.css';
