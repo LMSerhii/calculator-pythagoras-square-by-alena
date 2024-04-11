@@ -15,7 +15,7 @@ export default function Logo({ className }) {
 
   return (
     <div className={logoBuildClass}>
-      <span className={s.text}>Альона</span>
+      <span className={s.text}>Алёна</span>
       <BsStars color="#FF69B4" />
       <span className={s.text}>Твой нумеролог</span>
     </div>
