@@ -2,8 +2,10 @@
   padding: 20px 0;
   color: #734f96;
   font-size: 20px;
+  font-weight: 600;
   /* font-family: Yellowtail; */
-  font-family: 'Marck Script', cursive;
+  /* font-family: 'Marck Script', cursive; */
+  font-style: italic;
   line-height: normal;
   letter-spacing: 0.02em;
 

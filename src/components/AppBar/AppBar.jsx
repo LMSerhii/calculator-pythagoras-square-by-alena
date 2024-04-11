@@ -1,4 +1,3 @@
-import Navigation from '../Navigation/Navigation';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import Header from '../Header/Header';
@@ -49,7 +48,7 @@ export default function AppBar() {
       <Container className={className}>
         {isMobileView ? (
           <>
-            <Navigation />
+            {/* <Navigation /> */}
             <Logo />
             <SocialIcons linkStyle={s.link} iconStyle={s.icon} />
           </>

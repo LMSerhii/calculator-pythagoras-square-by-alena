@@ -86,8 +86,8 @@ function Form() {
             className={css.inputMask}
             mask="99.99.9999"
             maskPlaceholder="__.__.____"
-            // placeholder="mm.dd.yyyy"
-            placeholder="Введите вашу дату рождения"
+            placeholder="дд.мм.гггг"
+            // placeholder="Введите вашу дату рождения"
             onChange={e => setValue(e.target.value)}
             value={value}
           />
