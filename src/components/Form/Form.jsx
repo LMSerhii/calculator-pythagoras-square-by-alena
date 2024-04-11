@@ -93,7 +93,7 @@ function Form() {
           />
         </div>
 
-        {!isShow ? (
+        {/* {!isShow ? (
           <button className={css.button} type="submit" onClick={handleClickSet}>
             Расчитать
           </button>
@@ -105,7 +105,11 @@ function Form() {
           >
             Очистить
           </button>
-        )}
+        )} */}
+
+        <button className={css.button} type="submit" onClick={handleClickSet}>
+          Расчитать
+        </button>
       </form>
     </Container>
   );
