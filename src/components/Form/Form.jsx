@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ReactInputMask from 'react-input-mask';
 import css from './Form.module.css';
@@ -6,18 +5,27 @@ import { addDate } from '../../redux/dateSlice';
 import { selectIsShow } from '../../redux/selectors';
 import { addLifeNumbers, setIsShow } from '../../redux/calculatorSlice';
 import { converteDate } from '../../helpers/calculator-pythagoras-square';
+import { useState } from 'react';
+import Container from '../Container/Container';
 
-export default function Form() {
+const scrollToElement = () => {
+  const element = document.getElementById('squareSection');
+  element?.scrollIntoView({ behavior: 'smooth' });
+};
+
+function Form() {
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
   const isShow = useSelector(selectIsShow);
-
   // const mquery = useMediaQuery('(min-width: 768px)');
 
   const handleClickSet = e => {
     e.preventDefault();
 
     if (!value) {
+      dispatch(setIsShow(true));
+      scrollToElement();
+
       return;
     }
 
@@ -50,6 +58,8 @@ export default function Form() {
     );
 
     dispatch(setIsShow(true));
+
+    setTimeout(scrollToElement, 500);
   };
 
   const handleClickClear = e => {
@@ -66,8 +76,20 @@ export default function Form() {
   };
 
   return (
-    <div className={css.wrap}>
+    <Container>
       <form className={css.form}>
+        <div className={css.inputWrapper}>
+          <ReactInputMask
+            className={css.inputMask}
+            mask="99.99.9999"
+            maskPlaceholder="__.__.____"
+            // placeholder="mm.dd.yyyy"
+            placeholder="Введите вашу дату рождения"
+            onChange={e => setValue(e.target.value)}
+            value={value}
+          />
+        </div>
+
         {!isShow ? (
           <button className={css.button} type="submit" onClick={handleClickSet}>
             Расчитать
@@ -81,19 +103,9 @@ export default function Form() {
             Очистить
           </button>
         )}
-
-        <div className={css.inputWrapper}>
-          <ReactInputMask
-            className={css.inputMask}
-            mask="99.99.9999"
-            maskPlaceholder="__.__.____"
-            // placeholder="mm.dd.yyyy"
-            placeholder="Введите вашу дату рождения"
-            onChange={e => setValue(e.target.value)}
-            value={value}
-          />
-        </div>
       </form>
-    </div>
+    </Container>
   );
 }
+
+export default Form;

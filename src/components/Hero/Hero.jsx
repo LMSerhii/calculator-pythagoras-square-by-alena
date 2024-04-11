@@ -3,9 +3,8 @@ import Section from '../Section/Section';
 import css from './Hero.module.css';
 import image from '../../images/square.png';
 import Title from '../Title/Title';
-import Form from '../Form/Form';
 
-export default function Hero() {
+function Hero() {
   return (
     <Section>
       <Container>
@@ -30,9 +29,10 @@ export default function Hero() {
               />
             </div>
           </div>
-          <Form />
         </div>
       </Container>
     </Section>
   );
 }
+
+export default Hero;

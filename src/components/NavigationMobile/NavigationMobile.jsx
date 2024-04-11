@@ -10,10 +10,10 @@ export default function NavigationMobile() {
   return (
     <nav className={s.navigation}>
       <NavLink to="/" className={buildLinkClass}>
-        Main
+        Главная
       </NavLink>
       <NavLink to="/contacts" className={buildLinkClass}>
-        About me
+        Контакты
       </NavLink>
     </nav>
   );

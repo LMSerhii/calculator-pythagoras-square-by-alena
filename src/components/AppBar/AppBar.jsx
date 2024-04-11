@@ -57,8 +57,6 @@ export default function AppBar() {
           <>
             <Logo />
             <BurgerMenu isShow={isShow} setIsShow={toggleMobileMenu} />
-            {/* <NavigationMobile /> */}
-            {/* <Telegram /> */}
           </>
         )}
       </Container>

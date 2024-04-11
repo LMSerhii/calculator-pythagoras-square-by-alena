@@ -6,7 +6,7 @@ import LifeNumbers from '../LifeNumbers/LifeNumbers';
 import StringResults from '../StringResults/StringResults';
 import SquareMobile from '../SquareMobile/SquareMobile';
 
-export default function SquareSection() {
+function SquareSection() {
   const isShow = useSelector(selectIsShow);
 
   if (isShow) {
@@ -22,3 +22,5 @@ export default function SquareSection() {
     );
   }
 }
+
+export default SquareSection;

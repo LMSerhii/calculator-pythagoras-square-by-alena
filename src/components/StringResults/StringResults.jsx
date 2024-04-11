@@ -3,7 +3,7 @@ import CopyToClipboardOnClick from '../CopyToClipboardOnClick/CopyToClipboardOnC
 import { selectLifeNumbers, selectResult } from '../../redux/selectors';
 import s from './StringResults.module.css';
 
-export default function StringResults() {
+function StringResults() {
   const {
     character,
     health,
@@ -34,3 +34,5 @@ export default function StringResults() {
     </div>
   );
 }
+
+export default StringResults;
