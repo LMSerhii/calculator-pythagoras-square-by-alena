@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import useEventListener from '../useEventListener/useEventListener';
+import useEventListener from './useEventListener';
 
 export default function useMediaQuery(mediaQuery) {
   const [isMatch, setIsMatch] = useState(false);

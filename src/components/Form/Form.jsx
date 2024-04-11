@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
+import useMediaQuery from '../../hooks/useMediaQuery';
 import ReactInputMask from 'react-input-mask';
 import css from './Form.module.css';
 import { addDate } from '../../redux/dateSlice';
@@ -7,25 +9,26 @@ import { addLifeNumbers, setIsShow } from '../../redux/calculatorSlice';
 import { converteDate } from '../../helpers/calculator-pythagoras-square';
 import { useState } from 'react';
 import Container from '../Container/Container';
-
-const scrollToElement = () => {
-  const element = document.getElementById('squareSection');
-  element?.scrollIntoView({ behavior: 'smooth' });
-};
+import { smoothScrollBy } from '../../helpers/smoothScrollBy';
 
 function Form() {
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
   const isShow = useSelector(selectIsShow);
-  // const mquery = useMediaQuery('(min-width: 768px)');
+
+  const mobile = useMediaQuery('(min-width: 375px)');
+  const tablet = useMediaQuery('(min-width: 768px)');
+  const desktop = useMediaQuery('(min-width: 1440px)');
+
+  const scrollLength = (mobile && 200) || (tablet && 400) || (desktop && 600);
 
   const handleClickSet = e => {
     e.preventDefault();
 
     if (!value) {
-      dispatch(setIsShow(true));
-      scrollToElement();
+      toast.error('Вы не ввели дату рождения.');
 
+      dispatch(setIsShow(false));
       return;
     }
 
@@ -59,7 +62,7 @@ function Form() {
 
     dispatch(setIsShow(true));
 
-    setTimeout(scrollToElement, 500);
+    smoothScrollBy(0, scrollLength, 500);
   };
 
   const handleClickClear = e => {
