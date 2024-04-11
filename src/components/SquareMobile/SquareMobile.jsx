@@ -29,37 +29,37 @@ export default function SquareMobile() {
         <div className={css.first}>
           <div>
             <span>{character}</span>
-            <span>character</span>
+            <span>Характер</span>
           </div>
           <div>
             <span>{energy}</span>
-            <span>energy</span>
+            <span>Энергия</span>
           </div>
           <div>
             <span>{interest}</span>
-            <span>interest</span>
+            <span>Интерес</span>
           </div>
           <div id={css.selfEsteem}>
             <span>{selfEsteem}</span>
-            <span>selfEsteem</span>
+            <span>Самооценка</span>
           </div>
         </div>
         <div className={css.second}>
           <div>
             <span>{health}</span>
-            <span>health</span>
+            <span>Здоровье</span>
           </div>
           <div>
             <span>{logic}</span>
-            <span>logic</span>
+            <span>Логика</span>
           </div>
           <div>
             <span>{labour}</span>
-            <span>labour</span>
+            <span>Труд</span>
           </div>
           <div id={css.work}>
             <span>{work}</span>
-            <span>work</span>
+            <span>Работа</span>
           </div>
         </div>
       </div>
@@ -67,42 +67,42 @@ export default function SquareMobile() {
         <div className={css.third}>
           <div>
             <span>{luck}</span>
-            <span>luck</span>
+            <span>Удача</span>
           </div>
           <div>
             <span>{duty}</span>
-            <span>duty</span>
+            <span>Долг</span>
           </div>
           <div>
             <span>{memory}</span>
-            <span>memory</span>
+            <span>Память</span>
           </div>
           <div id={css.talent}>
             <span>{talent}</span>
-            <span>talent</span>
+            <span>Талант</span>
           </div>
         </div>
         <div className={css.forth}>
           <div id={css.purpose}>
             <span>{purpose}</span>
-            <span>purpose</span>
+            <span>Цель</span>
           </div>
           <div id={css.family}>
             <span>{family}</span>
-            <span>family</span>
+            <span>Семья</span>
           </div>
           <div id={css.habits}>
             <span>{habits}</span>
-            <span>habits</span>
+            <span>Привычки</span>
           </div>
           <div id={css.spiritTemperament}>
             <div id={css.spirit}>
               <span>{spirit}</span>
-              <span>spirit</span>
+              <span>Дух</span>
             </div>
             <div id={css.temperament}>
               <span>{temperament}</span>
-              <span>temperament</span>
+              <span>Темперамент</span>
             </div>
           </div>
         </div>
