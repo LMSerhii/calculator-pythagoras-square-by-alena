@@ -1,67 +1,46 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
 import useMediaQuery from '../../hooks/useMediaQuery';
-import ReactInputMask from 'react-input-mask';
 import css from './Form.module.css';
 import { addDate } from '../../redux/dateSlice';
 import { addLifeNumbers, setIsShow } from '../../redux/calculatorSlice';
 import { converteDate } from '../../helpers/calculator-pythagoras-square';
-import { useState } from 'react';
-import Container from '../Container/Container';
 import { smoothScrollBy } from '../../helpers/smoothScrollBy';
+import Container from '../Container/Container';
 
 function Form() {
   const dispatch = useDispatch();
-  const [value, setValue] = useState('');
+
+  const [isShowDayList, setIsShowDayList] = useState(false);
+  const [isShowMonthList, setIsShowMonthList] = useState(false);
+  const [isShowYearList, setIsShowYearList] = useState(false);
+
+  const [day, setDay] = useState('День');
+  const [month, setMonth] = useState('Месяц');
+  const [year, setYear] = useState('Год');
 
   const mobile = useMediaQuery('(min-width: 375px)');
   const tablet = useMediaQuery('(min-width: 768px)');
   const desktop = useMediaQuery('(min-width: 1440px)');
 
-  const handleChange = e => {
-    const value = e.target.value;
-
-    const parts = value.split('.');
-
-    const day = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10);
-    const year = parseInt(parts[2], 10);
-
-    if (day > 31) {
-      toast.error('День не может быть больше 31');
-    }
-
-    if (month > 12) {
-      toast.error('Месяц не может быть больше 12');
-    }
-
-    if (year > new Date().getFullYear()) {
-      toast.error('Год не может быть больше текущего');
-    }
-
-    setValue(value);
-  };
-
   const handleClickSet = e => {
     e.preventDefault();
-    setValue('');
 
-    if (!value) {
-      toast.error('Вы не ввели дату рождения.');
-
-      dispatch(setIsShow(false));
+    if (!parseInt(day)) {
+      toast.error('Введите день Рождения');
       return;
     }
 
-    const dateList = value.split('.').map(Number);
-
-    const validate = !dateList.some(el => isNaN(el));
-
-    if (!validate) {
+    if (!parseInt(month)) {
+      toast.error('Введите месяц Рождения');
       return;
     }
 
-    const [day, month, year] = dateList;
+    if (!parseInt(year)) {
+      toast.error('Введите год Рождения');
+      return;
+    }
 
     dispatch(
       addDate({
@@ -86,22 +65,123 @@ function Form() {
     smoothScrollBy(0, scrollLength, 500);
   };
 
+  const handleDayClick = () => {
+    setIsShowDayList(!isShowDayList);
+  };
+  const handleMonthClick = () => {
+    setIsShowMonthList(!isShowMonthList);
+  };
+  const handleYearClick = () => {
+    setIsShowYearList(!isShowYearList);
+  };
+
+  const itemDayClick = e => {
+    setDay(e.target.value);
+    setIsShowDayList(false);
+  };
+
+  const itemMonthClick = e => {
+    setMonth(e.target.value);
+    setIsShowMonthList(false);
+  };
+
+  const itemYearClick = e => {
+    setYear(e.target.value);
+    setIsShowYearList(false);
+  };
+
   const scrollLength = (mobile && 200) || (tablet && 400) || (desktop && 600);
+
+  let numbersDayArray = Array.from(
+    { length: 31 },
+    (_, index) => index + 1
+  ).reverse();
+
+  let numbersMonthArray = Array.from(
+    { length: 12 },
+    (_, index) => index + 1
+  ).reverse();
+
+  const currentYear = new Date().getFullYear();
+  let numbersYearArray = Array.from(
+    { length: currentYear - 1899 },
+    (_, index) => 1900 + index
+  ).reverse();
 
   return (
     <Container>
       <form className={css.form}>
-        <div className={css.inputWrapper}>
-          <ReactInputMask
-            className={css.inputMask}
-            mask="99.99.9999"
-            maskPlaceholder="__.__.____"
-            placeholder="дд.мм.гггг"
-            onChange={handleChange}
-            value={value}
-          />
+        <div className={css.selectGroup}>
+          <div className={css.dropDown}>
+            <button
+              type="button"
+              className={css.dropdownButton}
+              onClick={handleDayClick}
+            >
+              {day}
+            </button>
+            {isShowDayList && (
+              <ul className={css.dropdownList}>
+                {numbersDayArray.map((num, index) => (
+                  <li
+                    key={index}
+                    className={css.dropdownItem}
+                    value={num}
+                    onClick={itemDayClick}
+                  >
+                    {num}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div className={css.dropDown}>
+            <button
+              type="button"
+              className={css.dropdownButton}
+              onClick={handleMonthClick}
+            >
+              {month}
+            </button>
+            {isShowMonthList && (
+              <ul className={css.dropdownList}>
+                {numbersMonthArray.map((num, index) => (
+                  <li
+                    key={index}
+                    className={css.dropdownItem}
+                    value={num}
+                    onClick={itemMonthClick}
+                  >
+                    {num}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div className={css.dropDown}>
+            <button
+              type="button"
+              className={css.dropdownButton}
+              onClick={handleYearClick}
+            >
+              {year}
+            </button>
+            {isShowYearList && (
+              <ul className={css.dropdownList}>
+                {numbersYearArray.map((num, index) => (
+                  <li
+                    key={index}
+                    className={css.dropdownItem}
+                    value={num}
+                    onClick={itemYearClick}
+                  >
+                    {num}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
-
         <button className={css.button} type="submit" onClick={handleClickSet}>
           Расчитать
         </button>

@@ -1,0 +1,9 @@
+.dateSelect {
+  border: 1px solid red;
+  border-radius: 12px;
+  padding: 8px 18px;
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  gap: 5px;
+}
