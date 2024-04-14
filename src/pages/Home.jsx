@@ -5,6 +5,7 @@ import BlogConsultation from '../components/BlogConsultation/BlogConsultation';
 import SquareSection from '../components/SquareSection/SquareSection';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 import Form from '../components/Form/Form';
+import BottomButton from '../components/BottomButton/BottomButton';
 
 export default function Home() {
   const [square] = useAutoAnimate();
@@ -21,6 +22,7 @@ export default function Home() {
         <SquareSection />
       </div>
       <Benefits />
+      <BottomButton />
     </>
   );
 }

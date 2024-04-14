@@ -1,14 +1,12 @@
 import s from './Content.module.css';
 import ContentText from '../ContentText/ContentText';
-import Link from '../Link/Link';
+import ConsultationBtn from '../ConsultationBtn/ConsultationBtn';
 
 const Content = () => {
   return (
     <div className={s.content}>
       <ContentText />
-      <Link className={s.link} to="https://t.me/olena_numero_aroma">
-        Записаться на консультацию
-      </Link>
+      <ConsultationBtn />
     </div>
   );
 };

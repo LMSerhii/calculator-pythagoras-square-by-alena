@@ -1,0 +1,8 @@
+.link {
+  background-color: #734f96;
+}
+
+.link:hover,
+.link:focus {
+  background-color: #b7b7e9;
+}
